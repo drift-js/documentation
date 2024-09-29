@@ -1,0 +1,89 @@
+---
+layout: landing
+---
+
+import { HomePage } from 'vocs/components'
+
+<HomePage.Root>
+  <HomePage.Logo />
+  <HomePage.Tagline>Simple lightweight WinterCG compaitable web application framework</HomePage.Tagline>
+  <HomePage.InstallPackage name="@drift-js/drift" type="install" />
+  {/* <HomePage.Description>Simple lightweight WinterCG compaitable web application framework</HomePage.Description> */}
+  <HomePage.Buttons>
+    <HomePage.Button href="/getting-started" variant="accent">Get started</HomePage.Button>
+    <HomePage.Button href="https://github.com/drift-js/drift">GitHub</HomePage.Button>
+  </HomePage.Buttons>
+</HomePage.Root>
+
+## Simple to use
+
+Starting a basic Drift application only takes a few lines of code.
+
+```ts twoslash title="src/index.ts"
+import { Drift } from "@drift-js/drift";
+
+const app = new Drift().get("/", () => {
+    return {
+        message: "Hello world!"
+    }
+});
+
+Bun.serve({
+    port: 3000,
+    fetch: app.fetch
+})
+```
+
+## Type inference and validation
+
+Drift infers types for your routes and provides easy to use middlewares to validate incoming requests.
+
+```ts twoslash title="src/index.ts"
+import { Drift, ArkType } from "@drift-js/drift";
+import { type } from "arktype";
+
+const app = new Drift()
+    .get("/users/:userId", ({ params }) => {
+                          //  ^?
+          return {
+              id: params.userId,
+          }
+    })
+    .post(
+        "/echo",
+        ArkType.body(
+            type({
+                message: "string"
+            })
+        ), 
+        ({ body }) => {
+        // ^?
+            return body
+        }
+    );
+
+```
+
+## Robust error handling
+
+Drift provides a simple way to handle errors in your application.
+
+```ts twoslash title="src/index.ts"
+import { Drift, onError, error } from "@drift-js/drift";
+import { type } from "arktype";
+
+const app = new Drift()
+    .get(
+          "/",
+          onError((e) => {
+              if (e instanceof Error) {
+                  return error({ message: e.message }, 400)
+              }
+              return error({ message: "Internal server error. " }, 500)
+          }),
+          () => {
+            throw new Error("An error occurred")
+          }
+    );
+
+```
