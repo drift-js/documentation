@@ -38,9 +38,10 @@ Bun.serve({
 Drift infers types for your routes and provides easy to use middlewares to validate incoming requests.
 
 ```ts twoslash title="src/index.ts"
-import { Drift, ArkType } from "@drift-js/drift";
+import { Drift } from "@drift-js/drift";
+import { body } from "@drift-js/drift/dist/validation/arktype";
 import { type } from "arktype";
-
+// ---cut---
 const app = new Drift()
     .get("/users/:userId", ({ params }) => {
                           //  ^?
@@ -49,14 +50,18 @@ const app = new Drift()
           }
     })
     .post(
-        "/echo",
-        ArkType.body(
+        "/post",
+        body(
             type({
-                message: "string"
+                title: "string",
+                content: "string",
+                tags: "string[]",
             })
         ), 
         ({ body }) => {
-        // ^?
+// @noErrors
+            body.
+            //   ^|
             return body
         }
     );
@@ -67,10 +72,12 @@ const app = new Drift()
 Drift provides a simple way to handle errors in your application.
 
 ```ts twoslash title="src/index.ts"
-import { Drift, onError, error } from "@drift-js/drift";
+import { Drift, error } from "@drift-js/drift";
+import { onError } from "@drift-js/drift/dist/middleware";
 import { type } from "arktype";
-
+// ---cut---
 const app = new Drift()
+//    ^^^
     .get(
           "/",
           onError((e) => {
