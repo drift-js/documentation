@@ -2,16 +2,21 @@
 layout: landing
 ---
 
-import { HomePage } from 'vocs/components'
+import { HomePage } from "vocs/components";
 
 <HomePage.Root>
-  <HomePage.Logo />
-  <HomePage.Tagline>Simple lightweight WinterCG compatible web application framework</HomePage.Tagline>
-  <HomePage.InstallPackage name="@drift-js/drift" type="install" />
-  <HomePage.Buttons>
-    <HomePage.Button href="/getting-started" variant="accent">Get started</HomePage.Button>
-    <HomePage.Button href="https://github.com/drift-js/drift">GitHub</HomePage.Button>
-  </HomePage.Buttons>
+    <HomePage.Logo />
+    <HomePage.Tagline>Simple lightweight web application framework</HomePage.Tagline>
+    <HomePage.Description>
+        Build reliable applications with end-to-end type safety and great developer experience.
+    </HomePage.Description>
+    <HomePage.InstallPackage name="@drift-js/drift" type="install" />
+    <HomePage.Buttons>
+        <HomePage.Button href="/getting-started" variant="accent">
+            Get started
+        </HomePage.Button>
+        <HomePage.Button href="https://github.com/drift-js/drift">GitHub</HomePage.Button>
+    </HomePage.Buttons>
 </HomePage.Root>
 
 ## Simple to use
@@ -23,14 +28,14 @@ import { Drift } from "@drift-js/drift";
 
 const app = new Drift().get("/", () => {
     return {
-        message: "Hello world!"
-    }
+        message: "Hello world!",
+    };
 });
 
 Bun.serve({
     port: 3000,
-    fetch: app.fetch
-})
+    fetch: app.fetch,
+});
 ```
 
 ## Type inference and validation
@@ -59,7 +64,7 @@ const app = new Drift()
                 content: "string",
                 tags: "string[]",
             })
-        ), 
+        ),
         ({ body }) => {
 // @noErrors
             body.
@@ -81,18 +86,17 @@ import { onError } from "@drift-js/drift/middleware";
 import { type } from "arktype";
 
 const app = new Drift()
-//    ^^^
+    //^^^
     .get(
-          "/",
-          onError((e) => {
-              if (e instanceof Error) {
-                  return error({ message: e.message }, 400)
-              }
-              return error({ message: "Internal server error. " }, 500)
-          }),
-          () => {
-            throw new Error("An error occurred")
-          }
+        "/",
+        onError((e) => {
+            if (e instanceof Error) {
+                return error({ message: e.message }, 400);
+            }
+            return error({ message: "Internal server error. " }, 500);
+        }),
+        () => {
+            throw new Error("An error occurred");
+        }
     );
-
 ```
