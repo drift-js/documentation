@@ -8,7 +8,7 @@
         "preview": "vocs preview"
     },
     "dependencies": {
-        "@drift-js/drift": "0.0.15",
+        "@drift-js/drift": "0.0.16",
         "@types/react": "latest",
         "arktype": "2.0.0-rc.13",
         "react": "latest",

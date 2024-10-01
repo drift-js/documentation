@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@drift-js/drift':
-        specifier: 0.0.15
-        version: 0.0.15
+        specifier: 0.0.16
+        version: 0.0.16
       '@types/react':
         specifier: latest
         version: 18.3.10
@@ -155,8 +155,8 @@ packages:
     bundledDependencies:
       - is-unicode-supported
 
-  '@drift-js/drift@0.0.15':
-    resolution: {integrity: sha512-ggMZFckB2G7v1oWF0ldkpQ/IU1+wtJg45RvbhNQkSNbNUP2vkSYRpP26gvs4eLt++1G8Ijzm4+oaD0iVgAJOlg==}
+  '@drift-js/drift@0.0.16':
+    resolution: {integrity: sha512-/d1wvA7p7g7IGukJM/WWJgJ+MhwCdSs//GRJ5i1aENJ71hOzY5TSyLV2jrM/chV/HM3delUD7FUADRXgW+J+lg==}
 
   '@emotion/hash@0.9.2':
     resolution: {integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==}
@@ -1057,11 +1057,11 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@vanilla-extract/babel-plugin-debug-ids@1.0.6':
-    resolution: {integrity: sha512-C188vUEYmw41yxg3QooTs8r1IdbDQQ2mH7L5RkORBnHx74QlmsNfqVmKwAVTgrlYt8JoRaWMtPfGm/Ql0BNQrA==}
+  '@vanilla-extract/babel-plugin-debug-ids@1.1.0':
+    resolution: {integrity: sha512-Zy9bKjaL2P5zsrFYQJ8IjWGlFODmZrpvFmjFE0Zv8om55Pz1JtpJtL6DvlxlWUxbVaP1HKCqsmEfFOZN8fX/ZQ==}
 
-  '@vanilla-extract/css@1.15.5':
-    resolution: {integrity: sha512-N1nQebRWnXvlcmu9fXKVUs145EVwmWtMD95bpiEKtvehHDpUhmO1l2bauS7FGYKbi3dU1IurJbGpQhBclTr1ng==}
+  '@vanilla-extract/css@1.16.0':
+    resolution: {integrity: sha512-05JTbvG1E0IrSZKZ5el2EM9CmAX0XSdsNY+d4aRZxDvYf3/hwxomvFFEz2b/awjgg9yTVHW83Wq19wE4OoTEMg==}
 
   '@vanilla-extract/dynamic@2.1.2':
     resolution: {integrity: sha512-9BGMciD8rO1hdSPIAh1ntsG4LPD3IYKhywR7VOmmz9OO4Lx1hlwkSg3E6X07ujFx7YuBfx0GDQnApG9ESHvB2A==}
@@ -1379,8 +1379,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.29:
-    resolution: {integrity: sha512-PF8n2AlIhCKXQ+gTpiJi0VhcHDb69kYX4MtCiivctc2QD3XuNZ/XIOlbGzt7WAjjEev0TtaH6Cu3arZExm5DOw==}
+  electron-to-chromium@1.5.30:
+    resolution: {integrity: sha512-sXI35EBN4lYxzc/pIGorlymYNzDBOqkSlVRe6MkgBsW/hW1tpC/HDJ2fjG7XnjakzfLEuvdmux0Mjs6jHq4UOA==}
 
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
@@ -2815,7 +2815,7 @@ snapshots:
       picocolors: 1.1.0
       sisteransi: 1.0.5
 
-  '@drift-js/drift@0.0.15':
+  '@drift-js/drift@0.0.16':
     dependencies:
       type-fest: 4.26.1
 
@@ -3585,13 +3585,13 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vanilla-extract/babel-plugin-debug-ids@1.0.6':
+  '@vanilla-extract/babel-plugin-debug-ids@1.1.0':
     dependencies:
       '@babel/core': 7.25.2
     transitivePeerDependencies:
       - supports-color
 
-  '@vanilla-extract/css@1.15.5':
+  '@vanilla-extract/css@1.16.0':
     dependencies:
       '@emotion/hash': 0.9.2
       '@vanilla-extract/private': 1.0.6
@@ -3616,8 +3616,8 @@ snapshots:
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-syntax-typescript': 7.25.4(@babel/core@7.25.2)
-      '@vanilla-extract/babel-plugin-debug-ids': 1.0.6
-      '@vanilla-extract/css': 1.15.5
+      '@vanilla-extract/babel-plugin-debug-ids': 1.1.0
+      '@vanilla-extract/css': 1.16.0
       esbuild: 0.19.12
       eval: 0.1.8
       find-up: 5.0.0
@@ -3756,7 +3756,7 @@ snapshots:
   browserslist@4.24.0:
     dependencies:
       caniuse-lite: 1.0.30001664
-      electron-to-chromium: 1.5.29
+      electron-to-chromium: 1.5.30
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.0)
 
@@ -3926,7 +3926,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.29: {}
+  electron-to-chromium@1.5.30: {}
 
   emoji-regex@10.4.0: {}
 
@@ -5650,7 +5650,7 @@ snapshots:
       '@shikijs/rehype': 1.21.0
       '@shikijs/transformers': 1.21.0
       '@shikijs/twoslash': 1.21.0(typescript@5.6.2)
-      '@vanilla-extract/css': 1.15.5
+      '@vanilla-extract/css': 1.16.0
       '@vanilla-extract/dynamic': 2.1.2
       '@vanilla-extract/vite-plugin': 3.9.5(@types/node@22.7.4)(vite@5.4.8(@types/node@22.7.4))
       '@vitejs/plugin-react': 4.3.1(vite@5.4.8(@types/node@22.7.4))
