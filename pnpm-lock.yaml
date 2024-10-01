@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@drift-js/drift':
-        specifier: 0.0.13
-        version: 0.0.13
+        specifier: 0.0.15
+        version: 0.0.15
       '@types/react':
         specifier: latest
         version: 18.3.10
@@ -155,8 +155,8 @@ packages:
     bundledDependencies:
       - is-unicode-supported
 
-  '@drift-js/drift@0.0.13':
-    resolution: {integrity: sha512-RlLdZ/SiXkuy5ZQLxtB1+/BggBoakoT+sNbhvxzJcejysqRaXNOwrmfpuj1mWJN33JhTau81h/2aqDSqRMHp9A==}
+  '@drift-js/drift@0.0.15':
+    resolution: {integrity: sha512-ggMZFckB2G7v1oWF0ldkpQ/IU1+wtJg45RvbhNQkSNbNUP2vkSYRpP26gvs4eLt++1G8Ijzm4+oaD0iVgAJOlg==}
 
   '@emotion/hash@0.9.2':
     resolution: {integrity: sha512-MyqliTZGuOm3+5ZRSaaBGP3USLw6+EGykkwZns2EPC5g8jJ4z9OrdZY9apkl3+UP9+sdz76YYkwCKP5gh8iY3g==}
@@ -2815,7 +2815,7 @@ snapshots:
       picocolors: 1.1.0
       sisteransi: 1.0.5
 
-  '@drift-js/drift@0.0.13':
+  '@drift-js/drift@0.0.15':
     dependencies:
       type-fest: 4.26.1
 

@@ -19,8 +19,7 @@ import { HomePage } from "vocs/components";
     </HomePage.Buttons>
 </HomePage.Root>
 
-
-## Simple to use 
+## Simple to use
 
 Starting a basic Drift application only takes a few lines of code.
 
@@ -104,7 +103,7 @@ const app = new Drift()
 
 ## End-to-end type safety
 
-Achieve end-to-end type safety with Drift's typesafe api client.
+Achieve end-to-end type safety with Drifts typesafe api client.
 
 ```ts twoslash title="src/client.ts"
 // @module: esnext
@@ -139,6 +138,52 @@ const result = await $fetch("/users/:userId/posts/:postId", {
     method: "GET",
     params: {
         userId: "1",
+    },
+});
+```
+
+## File uploading
+
+Drifts api client makes it easy to upload files to your api.
+
+```ts twoslash title="src/client.ts"
+// @module: esnext
+// @moduleResolution: bundler
+// @filename: index.ts
+import { Drift, error } from "@drift-js/drift";
+import { body } from "@drift-js/drift/validation/arktype";
+import { type } from "arktype";
+
+export const app = new Drift().post(
+    "/upload",
+    body(
+        type({
+            message: "string",
+            file: "File",
+        })
+    ),
+    ({ body }) => {
+        return {
+            message: "File uploaded!",
+        };
+    }
+);
+
+export type App = typeof app;
+
+// @filename: client.ts
+// @errors: 2741
+// ---cut---
+import type { App } from "./";
+import { client } from "@drift-js/drift/client";
+
+const $fetch = client<App>("http://localhost:1234");
+
+const result = await $fetch("/upload", {
+    method: "POST",
+    input: {
+        message: "Hello, World!",
+        file: new File(["Hello, World!"], "hello.txt"),
     },
 });
 ```
